@@ -13,7 +13,7 @@ TPLX='\
 |  0 | elk        | dog        |\n\
 |  1 | pig        | quetzal    |'
 
-def parseCsv(path, encoding):
+def parseCsv(path, encoding = "utf-8"):
     cmd_str = ''
     with open(path,encoding= encoding)as f:
         f_csv = csv.reader(f)
@@ -38,7 +38,7 @@ class IncludePlugin(BasePlugin):
     )
     page = None
 
-    def includex(self, filename, encoding):
+    def includex(self, filename, encoding='utf-8'):
         if len(encoding) == 0:
             encoding='utf-8'
         # !!! TODO support git+, https and other uris
@@ -60,7 +60,9 @@ class IncludePlugin(BasePlugin):
 def main(argv):
     path=os.path.splitext("1.txt")[-1]
     print(path)
-    print(parseCsv("../test/hosts-info.csv"))
+    print(parseCsv("../test/hosts-info.csv","gbk"))
+    print(parseCsv("../test/hosts-info.csv","gbk"))
+
 
 
 if __name__ == "__main__":

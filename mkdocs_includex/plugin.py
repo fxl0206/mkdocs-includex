@@ -43,7 +43,7 @@ class IncludePlugin(BasePlugin):
         # !!! TODO support BOF, EOF markers
         # !!! TODO support line range
         path = f'{self.config["src_path"]}/{filename}'
-        suffix = os.path.splittext(path)[1]
+        suffix = os.path.splitext(path)[1]
         if suffix == ".csv" :
             return parseCsv(path)
         else:

@@ -2,14 +2,14 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='mkdocs-include',
+    name='mkdocs-includex',
     version='0.1.0',
     description='A MkDocs plugin for including files in markdown',
     long_description='',
     keywords='mkdocs',
     url='',
-    author='RedisLabs',
-    author_email='oss@redislabs.com',
+    author='fxl0206',
+    author_email='fxl0206@gmail.com',
     license='MIT',
     python_requires='>=2.7',
     install_requires=[
@@ -31,7 +31,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'mkdocs.plugins': [
-            'include = mkdocs_include.plugin:IncludePlugin'
+            'includex = mkdocs_includex.plugin:IncludePlugin'
         ]
     }
 )

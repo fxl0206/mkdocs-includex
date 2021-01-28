@@ -7,7 +7,7 @@ class IncludePlugin(BasePlugin):
 
     config_scheme = (
         # !!! TODO support multiple source dirs/lingos
-        ('src_path', config_options.Type(mkdocs_utils.string_types, default=None)),
+       # ('src_path', config_options.Type(mkdocs_utils.string_types, default=None)),
     )
     page = None
 
@@ -15,7 +15,7 @@ class IncludePlugin(BasePlugin):
         # !!! TODO support git+, https and other uris
         # !!! TODO support BOF, EOF markers
         # !!! TODO support line range
-        path = f'{self.config["src_path"]}/{filename}'
+        path = f'{filename}'
         with open(path, 'r') as f:
             return f.read()
 

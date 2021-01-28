@@ -1,4 +1,4 @@
-# mkdocs-include
+# mkdocs-includex
 
 This MkDocs plugin includes files in your markdown documents.
 
@@ -6,13 +6,14 @@ This MkDocs plugin includes files in your markdown documents.
 
 Install the plugin using pip:
 
-`pip install git+https://github.com/RedisLabs/mkdocs-include.git`
+`pip install git+https://https://github.com/fxl0206/mkdocs-includex.git
+
 
 Activate the plugin in `mkdocs.yml`:
 ```yaml
 plugins:
   - search
-  - include:
+  - includex:
     src_path: docs/sources
 ```
 

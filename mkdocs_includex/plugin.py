@@ -39,7 +39,7 @@ class IncludePlugin(BasePlugin):
     page = None
 
     def includex(self, filename, encoding):
-         if len(encoding) == 0:
+        if len(encoding) == 0:
             encoding='utf-8'
         # !!! TODO support git+, https and other uris
         # !!! TODO support BOF, EOF markers

@@ -6,7 +6,7 @@ This MkDocs plugin includes files in your markdown documents.
 
 Install the plugin using pip:
 
-`pip install git+https://https://github.com/fxl0206/mkdocs-includex.git
+`pip3 install git+https://github.com/fxl0206/mkdocs-includex.git
 
 
 Activate the plugin in `mkdocs.yml`:

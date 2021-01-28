@@ -11,7 +11,7 @@ class IncludePlugin(BasePlugin):
     )
     page = None
 
-    def include(self, filename):
+    def includex(self, filename):
         # !!! TODO support git+, https and other uris
         # !!! TODO support BOF, EOF markers
         # !!! TODO support line range
@@ -22,4 +22,4 @@ class IncludePlugin(BasePlugin):
     def on_page_markdown(self, markdown, page, config, **kwargs):
         self.page = page
         md_template = Template(markdown)
-        return md_template.render(includex=self.include)
+        return md_template.render(includex=self.includex)

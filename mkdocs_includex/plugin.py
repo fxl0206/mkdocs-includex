@@ -22,4 +22,4 @@ class IncludePlugin(BasePlugin):
     def on_page_markdown(self, markdown, page, config, **kwargs):
         self.page = page
         md_template = Template(markdown)
-        return md_template.render(include=self.include)
+        return md_template.render(includex=self.include)

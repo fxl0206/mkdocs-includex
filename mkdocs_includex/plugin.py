@@ -13,9 +13,9 @@ TPLX='\
 |  0 | elk        | dog        |\n\
 |  1 | pig        | quetzal    |'
 
-def parseCsv(path):
+def parseCsv(path, encoding):
     cmd_str = ''
-    with open(path,encoding= 'gbk')as f:
+    with open(path,encoding= encoding)as f:
         f_csv = csv.reader(f)
         line = 0
         for row in f_csv :
@@ -38,16 +38,18 @@ class IncludePlugin(BasePlugin):
     )
     page = None
 
-    def includex(self, filename):
+    def includex(self, filename, encoding):
+         if len(encoding) == 0:
+            encoding='utf-8'
         # !!! TODO support git+, https and other uris
         # !!! TODO support BOF, EOF markers
         # !!! TODO support line range
         path = f'{self.config["src_path"]}/{filename}'
         suffix = os.path.splitext(path)[1]
         if suffix == ".csv" :
-            return parseCsv(path)
+            return parseCsv(path,encoding)
         else:
-            with open(path, 'r') as f:
+            with open(path, 'r', encoding=encoding ) as f:
                 return f.read()
 
     def on_page_markdown(self, markdown, page, config, **kwargs):
